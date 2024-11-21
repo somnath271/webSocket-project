@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Example</title>
+</head>
+<body>
+    <h1>WebSocket Echo Example</h1>
+    <form id="messageForm">
+        <label for="message">Enter Message:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="response">
+        <h2>Server Response:</h2>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script>
+        let socket = new WebSocket("ws://localhost:8080/ws");
+
+        socket.onopen = function() {
+            console.log("Connected to WebSocket server");
+        };
+
+        socket.onmessage = function(event) {
+            document.getElementById("responseMessage").textContent = event.data;
+        };
+
+        socket.onclose = function() {
+            console.log("Disconnected from WebSocket server");
+        };
+
+        document.getElementById("messageForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let message = document.getElementById("message").value;
+            socket.send(message);
+        });
+    </script>
+</body>
+</html>
