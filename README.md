@@ -44,3 +44,7 @@ mvn spring-boot:run
 
 ## Contributing
 - Contributions are welcome! Fork this repository, create a new branch, and submit a pull request for review.
+
+  <img width="1440" alt="Screenshot 2024-11-21 at 10 27 09 PM" src="https://github.com/user-attachments/assets/7ec553ea-6014-44ae-831a-e795242abcfd">
+<img width="1440" alt="Screenshot 2024-11-21 at 10 27 25 PM" src="https://github.com/user-attachments/assets/cd0163c4-509a-4a09-b90d-444bc9e03adf">
+
